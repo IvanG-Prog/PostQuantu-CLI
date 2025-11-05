@@ -1,0 +1,3 @@
+Este es un archivo de prueba para la encriptación PQC con Kyber.
+Contiene un mensaje simple que debería ser encriptado y luego, idealmente, desencriptado.
+¡La criptografía cuántica es emocionante!
