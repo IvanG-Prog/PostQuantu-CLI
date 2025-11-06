@@ -1,5 +1,7 @@
 # 🛡️ PostQuantu CLI
 
+[![Product Page](https://img.shields.io/badge/OFFICIAL_SITE-GET_CLI_HERE-3B82F6?style=for-the-badge)](https://ivang-prog.github.io/PostQuantu-CLI)
+
 This is the **PostQuantu Command-Line Interface (CLI)**, designed as a robust and future-proof solution in the field of **Post-Quantum Cryptography (PQC)**. It leverages NIST-standardized algorithms (such as Kyber and Dilithium) to provide production-grade security and key management capabilities.
 
 ---
@@ -53,5 +55,6 @@ These steps allow **developers** to install the CLI in a virtual environment to 
 Once installed, you can execute the primary command, **`postquantu`**, directly from any terminal session.
 
 To launch the main menu:
-```bash
-postquantu
+
+    postquantu .
+    
