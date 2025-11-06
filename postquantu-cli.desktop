@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=PostQuantu CLI
+Comment= post-quantum cryptography interface
+Exec=postquantu
+Icon=postquantu.png
+Terminal=true
+Type=Application
+Categories=Network;Security;Development;
