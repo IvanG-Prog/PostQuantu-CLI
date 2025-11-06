@@ -7,151 +7,215 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --dark-bg: #1a1a2e;
+            --dark-bg: #111122;
             --primary-neon: #00f0ff;
             --secondary-neon: #aaff00;
             --text-color: #e0e0e0;
-            --border-color: #3a3a5f;
-            --button-glow: #00f0ff;
+            --accent-bg: #1a1a3e;
         }
 
         body {
-            font-family: 'Space Mono', monospace; 
-            text-align: center;
+            font-family: 'Space Mono', monospace;
             background-color: var(--dark-bg);
             color: var(--text-color);
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            overflow: hidden; 
-            position: relative;
-        }
-
-        body::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image:
-                linear-gradient(rgba(0,0,0,0) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0,0,0,0) 1px, transparent 1px);
-            background-size: 20px 20px;
-            opacity: 0.05;
-            z-index: 0;
+            line-height: 1.6;
+            overflow-x: hidden;
         }
 
         .container {
-            position: relative;
-            z-index: 1;
-            max-width: 900px;
+            max-width: 1100px;
             margin: 0 auto;
-            background: linear-gradient(145deg, #2a2a4a, #1a1a3e); 
-            padding: 60px 40px;
-            border-radius: 20px;
-            box-shadow:
-                0 0 15px var(--primary-neon),
-                0 0 30px var(--primary-neon),
-                0 0 45px var(--primary-neon),
-                inset 0 0 8px var(--primary-neon); 
-            border: 2px solid var(--primary-neon);
-            animation: pulse-border 2s infinite alternate;
+            padding: 0 20px;
         }
 
-        @keyframes pulse-border {
-            from { border-color: var(--primary-neon); box-shadow: 0 0 15px var(--primary-neon), 0 0 30px var(--primary-neon); }
-            to { border-color: var(--secondary-neon); box-shadow: 0 0 15px var(--secondary-neon), 0 0 30px var(--secondary-neon); }
+        .hero {
+            text-align: center;
+            padding: 100px 0;
+            background: var(--accent-bg);
+            border-bottom: 2px solid var(--primary-neon);
+            box-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+            margin-bottom: 50px;
         }
 
-        h1 {
-            font-family: 'Orbitron', sans-serif; 
+        .hero h1 {
+            font-family: 'Orbitron', sans-serif;
             font-size: 3.5em;
             font-weight: 700;
             color: var(--primary-neon);
-            text-shadow: 0 0 10px var(--primary-neon), 0 0 20px var(--primary-neon); 
-            letter-spacing: 2px;
-            animation: flicker-text 3s infinite alternate; 
+            text-shadow: 0 0 15px var(--primary-neon);
+            margin-bottom: 15px;
+            letter-spacing: 3px;
         }
 
-        @keyframes flicker-text {
-            0%, 18%, 22%, 25%, 53%, 57%, 100% { text-shadow: 0 0 7px var(--primary-neon), 0 0 15px var(--primary-neon); }
-            20%, 24%, 55% { text-shadow: none; }
-        }
-
-        .pqc-badge {
+        .hero p {
             font-size: 1.2em;
-            font-weight: 700;
             color: var(--secondary-neon);
-            text-shadow: 0 0 8px var(--secondary-neon);
             margin-bottom: 40px;
-            display: block;
-        }
-
-        p {
-            font-size: 1.1em;
-            margin-bottom: 50px;
-            color: var(--text-color);
-            padding: 0 20px;
+            text-shadow: 0 0 5px var(--secondary-neon);
         }
 
         .download-btn {
             display: inline-block;
-            padding: 18px 45px;
-            font-size: 1.5em;
+            padding: 15px 35px;
+            font-size: 1.2em;
             font-weight: 700;
-            color: var(--dark-bg); 
+            color: var(--dark-bg);
             background-color: var(--primary-neon);
-            border-radius: 10px;
+            border-radius: 8px;
             text-decoration: none;
             transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
-            box-shadow: 0 0 10px var(--button-glow), 0 0 20px var(--button-glow), 0 0 30px var(--button-glow); /* Resplandor */
-            border: none;
+            box-shadow: 0 0 15px var(--primary-neon);
         }
         .download-btn:hover {
             background-color: var(--secondary-neon);
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 0 15px var(--secondary-neon), 0 0 30px var(--secondary-neon), 0 0 45px var(--secondary-neon);
+            transform: translateY(-2px);
+            box-shadow: 0 0 20px var(--secondary-neon);
         }
 
-        .gh-link {
-            margin-top: 50px;
-            font-size: 0.9em;
-            color: var(--text-color);
+        .section {
+            padding: 50px 0;
+            border-bottom: 1px solid var(--border-color);
+            text-align: left;
         }
-        .gh-link a {
-            color: var(--primary-neon);
-            text-decoration: none;
-            font-weight: 700;
-            text-shadow: 0 0 5px var(--primary-neon);
-        }
-        .gh-link a:hover {
+
+        .section h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2em;
             color: var(--secondary-neon);
             text-shadow: 0 0 5px var(--secondary-neon);
+            border-bottom: 2px solid var(--secondary-neon);
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        .features {
+            display: flex;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .feature-item {
+            flex: 1;
+            background: #1a1a3e;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid var(--primary-neon);
+            box-shadow: 0 0 8px rgba(0, 240, 255, 0.3);
+            transition: transform 0.3s;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-item h3 {
+            color: var(--primary-neon);
+            font-size: 1.4em;
+            margin-top: 0;
+        }
+
+        .code-block {
+            background: #000;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid var(--secondary-neon);
+            box-shadow: 0 0 10px rgba(170, 255, 0, 0.6);
+            overflow-x: auto;
+            margin-top: 20px;
+        }
+
+        .code-block code {
+            color: #fff;
+            display: block;
+            white-space: pre;
+        }
+        
+        .code-command { color: var(--secondary-neon); font-weight: bold; }
+        .code-output { color: var(--primary-neon); }
+
+        /* --- Footer --- */
+        .footer {
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.9em;
+        }
+
+        .footer a {
+            color: var(--primary-neon);
+            text-decoration: none;
+            margin: 0 10px;
+            text-shadow: 0 0 3px var(--primary-neon);
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>POSTQUANTU CLI</h1>
-        <span class="pqc-badge">[ Quantum-Safe Security ]</span>
-        <p>
-            The ultimate command-line interface for modern cryptography. <br>
-            Manage keys, encrypt, and digitally sign data using NIST-standardized Post-Quantum Cryptography (PQC) algorithms: Kyber & Dilithium.
-            <br>
-            **Future-proof your data against quantum threats today.**
-        </p>
 
-        <a href="https://github.com/IvanG-Prog/PostQuantu-CLI/releases/download/v1.0.0/postquantu-cli_1.0.0_amd64.deb" class="download-btn">
-            ⬇️ DOWNLOAD v1.0.0 (.deb for Linux)
-        </a>
-
-        <div class="gh-link">
-            <p>Explore the <a href="https://github.com/IvanG-Prog/PostQuantu-CLI">Source Code & Documentation</a> on GitHub.</p>
+    <div class="hero">
+        <div class="container">
+            <h1>POSTQUANTU CLI</h1>
+            <p>[ FUTURE-PROOF YOUR SECURITY ]</p>
+            
+            <a href="https://github.com/IvanG-Prog/PostQuantu-CLI/releases/download/v1.0.0/postquantu-cli_1.0.0_amd64.deb" class="download-btn">
+                ⬇️ DOWNLOAD v1.0.0 (.deb for Linux)
+            </a>
+            
         </div>
     </div>
+
+    <div class="container">
+
+        <div class="section">
+            <h2>// 01. THE MISSION</h2>
+            <p>
+                **PostQuantu CLI** is your dedicated interface for migrating today's data and communications to a quantum-resistant state. Developed using standard **NIST algorithms**, it ensures your security remains unbreakable when large-scale quantum computers become a reality.
+            </p>
+            <div class="features">
+                <div class="feature-item">
+                    <h3>PQC Algorithms</h3>
+                    <p>Implements Kyber (Key Exchange) and Dilithium (Digital Signatures), the leading post-quantum cryptography standards selected by NIST.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Digital Signatures</h3>
+                    <p>Create unforgeable digital signatures for files and documents, ensuring integrity and authenticity in a quantum era.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Key Management</h3>
+                    <p>Tools for easy generation, storage, and exchange of quantum-resistant keys without complex configurations.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>// 02. HOW TO USE</h2>
+            <p>
+                Once installed via the native package, interact with the CLI directly from your terminal. Here are common commands:
+            </p>
+
+            <div class="code-block">
+                <code>
+<span class="code-command">postquantu</span>
+
+<span class="code-command">postquantu keygen --alg dilithium --output my_dilithium_key</span>
+<span class="code-output">Keys successfully generated: my_dilithium_key.pub, my_dilithium_key.priv</span>
+
+<span class="code-command">postquantu sign --file document.txt --key my_dilithium_key.priv</span>
+<span class="code-output">Signature file created: document.txt.sig</span>
+                </code>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="footer">
+        <p>
+            A project by IvanG-Prog. <br>
+            <a href="https://github.com/IvanG-Prog/PostQuantu-CLI">View Source Code</a> | <a href="https://github.com/IvanG-Prog/PostQuantu-CLI/releases">View Releases</a>
+        </p>
+    </div>
+
 </body>
 </html>
